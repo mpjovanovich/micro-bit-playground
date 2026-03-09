@@ -11,9 +11,9 @@ radio.on()
 while True:
     # Non-blocking receive check
     message = radio.receive()
-    if message == "A":
+    if message == "a":
         music.play(['a'])
-    elif message == "B":
+    elif message == "b":
         music.play(['b'])
         
     # If we don't want to buffer through messages
@@ -24,10 +24,10 @@ while True:
     
     # Check for button press
     if button_a.was_pressed():
-        radio.send("A")
+        radio.send("a")
     
     if button_b.was_pressed():
-        radio.send("B")
+        radio.send("b")
 
     # Small delay to prevent busy-waiting consuming battery
     sleep(10)
